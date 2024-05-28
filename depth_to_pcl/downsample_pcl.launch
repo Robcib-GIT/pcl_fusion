@@ -1,0 +1,29 @@
+<launch>
+    <node pkg="nodelet" type="nodelet" name="pcl_manager" args="manager" output="screen"/>
+  <node pkg="nodelet" type="nodelet" name="voxel_grid" args="load pcl/VoxelGrid pcl_manager" output="screen">
+    <param name="leaf_size" value="0.025"/> <!-- Este valor controla el downsample al 30%, ajusta según necesites -->
+    <!--remap from="~input" to="/camera/depth/points"/-->
+    <remap from="~input" to="/realsense_front"/>
+    <!--remap from="~output" to="/camera/depth/points_downsampled"/-->
+    <remap from="~output" to="/realsense_front_downsampled"/>  
+    <rosparam>
+      filter_field_name: z
+      filter_limit_min: 0.01
+      filter_limit_max: 6.0  <!-- Limit the range of points to forward to 6 meters in viewing direction-->
+      filter_limit_negative: False
+      leaf_size: 0.05  <!-- Limit the density to 5 cm-->
+    </rosparam>  
+  </node>
+
+
+  <node pkg="nodelet" type="nodelet" name="pcl_manager_1" args="manager" output="screen"/>
+  <node pkg="nodelet" type="nodelet" name="voxel_grid_1" args="load pcl/VoxelGrid pcl_manager" output="screen">
+    <param name="leaf_size" value="0.015"/> <!-- Este valor controla el downsample al 30%, ajusta según necesites -->
+    <!--remap from="~input" to="/camera/depth/points"/-->
+    <remap from="~input" to="/realsense_back"/>
+    <!--remap from="~output" to="/camera/depth/points_downsampled"/-->
+    <remap from="~output" to="/realsense_back_downsampled"/>    
+  </node>
+
+</launch>
+
