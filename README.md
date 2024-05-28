@@ -2,7 +2,7 @@
 Launch RGB-D multiple inputs (tested with two realsense cameras):
 - roslaunch multiple_scan_realsense.launch
   
-Conversion to Pointclouds, downsample and fussion:
+Conversion to Pointclouds, downsample and fusion:
 - perception_extra.sh
 
 It must be considered that each point cloud must be associated with a frame of the robot with its respective orientation (robot.xacro)
