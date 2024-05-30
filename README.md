@@ -12,4 +12,4 @@ Point clouds integration from different sources
 
 
 Application to elevation maps reconstruction
-![im_1](https://github.com/Robcib-GIT/pcl_fusion/assets/57187750/29e22264-691e-4da0-9640-80d611a2d80a)
+![Github](https://github.com/Robcib-GIT/pcl_fusion/assets/57187750/01c1cba1-ca73-4f17-88f6-88c17acd669f)
