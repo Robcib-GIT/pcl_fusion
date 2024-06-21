@@ -5,6 +5,10 @@ Launch RGB-D multiple inputs (tested with two realsense cameras):
 Conversion to Pointclouds, downsample and fusion:
 - perception_extra.sh
 
+The synthesis of the sensory process is schematized according to the diagram:
+![fusion](https://github.com/Robcib-GIT/pcl_fusion/assets/57187750/bac73e94-3a9c-491e-a13a-3a17f9688b62)
+
+
 It must be considered that each point cloud must be associated with a frame of the robot with its respective orientation (robot.xacro)
 
 Point clouds integration from different sources
